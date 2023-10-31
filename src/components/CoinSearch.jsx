@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import CoinItem from './CoinItem'
 
 const CoinSearch = ({ coins }) => {
-
-    const [searchText, setSearchText] = useState('')
+  const [searchText, setSearchText] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+  const coinsPerPage = 10
+  const totalPages = Math.ceil(coins.length / coinsPerPage)
 
   return (
     <div className='rounded-div-two my-4 '>
@@ -45,11 +47,23 @@ const CoinSearch = ({ coins }) => {
               }
               return false // Filter out items that don't match the search
             })
+            .slice((currentPage - 1) * coinsPerPage, currentPage * coinsPerPage)
             .map((coin) => (
               <CoinItem key={coin.id} coin={coin} />
             ))}
         </tbody>
       </table>
+
+      <div>
+        <button onClick={() => setCurrentPage((old) => Math.max(old - 1, 1))}>
+          Previous
+        </button>
+        <button
+          onClick={() => setCurrentPage((old) => Math.min(old + 1, totalPages))}
+        >
+          Next
+        </button>
+      </div>
     </div>
   )
 }

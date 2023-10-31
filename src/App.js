@@ -16,7 +16,7 @@ function App() {
   const [coins,setCoins] = useState([]);
 
   const url =
-    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=50&page=1&sparkline=true&locale=en'
+    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=2000&page=1&sparkline=true&locale=en'
 
   useEffect(()=>{
     axios.get(url).then((response)=>{
