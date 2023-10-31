@@ -4,7 +4,7 @@ import CoinItem from './CoinItem'
 const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-  const coinsPerPage = 10
+  const coinsPerPage = 20
   const totalPages = Math.ceil(coins.length / coinsPerPage)
 
   return (
@@ -54,12 +54,17 @@ const CoinSearch = ({ coins }) => {
         </tbody>
       </table>
 
-      <div>
-        <button onClick={() => setCurrentPage((old) => Math.max(old - 1, 1))}>
+      <div className='flex justify-center '>
+        <button
+          onClick={() => setCurrentPage((old) => Math.max(old - 1, 1))}
+          className='py-2 px-4 bg-button text-btnText my-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl font-bold'
+        >
           Previous
         </button>
+        <div className='self-center mx-4 font-bold border border-gray-500 border-[2]  px-3 py-2 rounded'>{currentPage}</div>
         <button
           onClick={() => setCurrentPage((old) => Math.min(old + 1, totalPages))}
+          className='py-2 px-4 bg-button text-btnText my-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl font-bold'
         >
           Next
         </button>
