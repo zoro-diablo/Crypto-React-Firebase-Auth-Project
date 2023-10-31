@@ -41,7 +41,11 @@ const CoinItem = ({ coin }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <td>
-        {savedCoin ? <AiFillStar className='text-yellow-400' /> : <AiOutlineStar onClick={saveCoin} />}
+        {savedCoin ? (
+          <AiFillStar className='text-yellow-400' />
+        ) : (
+          <AiOutlineStar onClick={saveCoin} />
+        )}
       </td>
       <td>{coin.market_cap_rank}</td>
       <td>
@@ -60,15 +64,19 @@ const CoinItem = ({ coin }) => {
       <td>₹{coin.current_price.toLocaleString()}</td>
       <td>
         {coin.price_change_percentage_24h > 0 ? (
-          <p className='text-green-600'>
-            <AiFillCaretUp className='relative top-4' />
+          <div className='text-green-600'>
+            <div className='hidden lg:block mr-2'>
+              <AiFillCaretUp className='float-left' />
+            </div>
             {coin.price_change_percentage_24h.toFixed(2)}%
-          </p>
+          </div>
         ) : (
-          <p className='text-red-600'>
-            <AiFillCaretDown className='relative top-4' />
+          <div className='text-red-600'>
+            <div className='hidden lg:block mr-2'>
+              <AiFillCaretDown className='float-left' />
+            </div>
             {coin.price_change_percentage_24h.toFixed(2)}%
-          </p>
+          </div>
         )}
       </td>
       <td className='w-[180px] hidden md:table-cell'>
