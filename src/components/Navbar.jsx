@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { UserAuth } from '../context/AuthContext'
-import logo from '../assets/new.png'
+import logo from '../assets/White logo.gif'
+import logoTwo from '../assets/Dark logo.gif'
+import { ThemeContext } from '../context/ThemeContext'
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-
+  
   const { user, logout } = UserAuth()
   const navigate = useNavigate()
-
+  
   const handleNav = () => {
     if (!nav) {
       document.body.style.overflow = 'hidden'
@@ -19,13 +22,15 @@ const Navbar = () => {
     }
     setNav(!nav)
   }
-
+  
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'auto'
     }
   }, [])
-
+  
+  const { theme } = useContext(ThemeContext)
+  
   const handleSignOut = async () => {
     try {
       await logout()
@@ -38,10 +43,12 @@ const Navbar = () => {
   return (
     <div className='rounded-div-three flex items-center justify-between h-20 font-bold mt-2'>
       <Link to='/'>
-        <h1 className='text-2xl ml-4 flex font-bold '>
-          Coin
-          <img src={logo} alt='logo' className='w-10 mx-1 ' />
-          Market
+        <h1 className='text-2xl ml-3 flex font-bold '>
+          <img
+            src={theme === 'dark' ? logoTwo : logo}
+            alt='logo'
+            className='w-[50%]'
+          />
         </h1>
       </Link>
       <div className='hidden absolute right-60 mx-5 md:block'>
