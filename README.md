@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+### <h1><u>Coin Z Market</u></h1> 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
+  <img src="https://i.postimg.cc/yYmS4BC4/new.png" width="200" alt="Coin Z Market Logo" align="center">
+</p>
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+Coin Z Market is a cryptocurrency market tracking web application. This project is currently in its beta phase, with limited functionalities implemented. It leverages various technologies and APIs to provide users with cryptocurrency market data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Explore the latest version [Link to website](https://coin-z-market.netlify.app).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Firebase Authentication:** Secure user authentication for a personalized experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Coin Gecko API:** Accesses the Coin Gecko API to retrieve real-time cryptocurrency market data.
 
-### `npm run build`
+- **Dynamic Routing:** Utilizes React Router for smooth navigation between different sections of the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Theme Switching:** Allows users to switch between light and dark themes for improved user experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Coin Gecko API:** Accesses the Coin Gecko API to retrieve real-time cryptocurrency market data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React App:** Developed using React, a popular JavaScript library for building user interfaces.
 
-### `npm run eject`
+- **Tailwind Styles:** Employs Tailwind CSS for efficient and responsive styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Axios:** Utilizes Axios for simplified and reliable HTTP requests to fetch data from APIs.
+### Dashboard
+![Dashboard](https://i.postimg.cc/yYvrTMpB/Screenshot-2023-10-31-105202.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Theme Switching
+![Theme Switching](https://i.postimg.cc/BQqVHSgM/Screenshot-2023-10-31-105452.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run this project locally, follow these steps:
 
-## Learn More
+# Clone the repository
+```
+git clone https://github.com/yourusername/coin-z-market.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+# Navigate to the project directory
+```
+cd coin-z-market
+```
+# Install project dependencies
+```
+npm install
+```
+# Start the development server
+```
+npm start
+   
+```
+## Note
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The UI design is currently being revamped. So changes may be made soon.
