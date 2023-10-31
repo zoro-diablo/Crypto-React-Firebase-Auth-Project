@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
@@ -12,8 +12,19 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const handleNav = () => {
+    if (!nav) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
     setNav(!nav)
   }
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [])
 
   const handleSignOut = async () => {
     try {
@@ -38,8 +49,8 @@ const Navbar = () => {
       </div>
 
       {user?.email ? (
-        <div>
-          <Link to='/account' className='p-4 mx-2'>
+        <div className='flex'>
+          <Link to='/account' className='p-4 mx-2 hidden md:block'>
             Account
           </Link>
           <button onClick={handleSignOut} className='mx-4'>
