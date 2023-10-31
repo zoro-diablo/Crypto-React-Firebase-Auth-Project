@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
+import Button from '../components/Button'
 
 const Signin = () => {
   const [email, setEmail] = useState('')
@@ -50,9 +51,7 @@ const Signin = () => {
               <AiFillLock className='absolute right-2 top-3 text-gray-400' />
             </div>
           </div>
-          <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>
-            Sign in
-          </button>
+          <Button buttonText='Sign In' />
         </form>
         <p className='my-4'>
           Don't have an account?{' '}

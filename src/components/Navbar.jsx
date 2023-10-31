@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
@@ -7,13 +7,12 @@ import logo from '../assets/White logo.gif'
 import logoTwo from '../assets/Dark logo.gif'
 import { ThemeContext } from '../context/ThemeContext'
 
-
 const Navbar = () => {
   const [nav, setNav] = useState(false)
-  
+
   const { user, logout } = UserAuth()
   const navigate = useNavigate()
-  
+
   const handleNav = () => {
     if (!nav) {
       document.body.style.overflow = 'hidden'
@@ -22,15 +21,15 @@ const Navbar = () => {
     }
     setNav(!nav)
   }
-  
+
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'auto'
     }
   }, [])
-  
+
   const { theme } = useContext(ThemeContext)
-  
+
   const handleSignOut = async () => {
     try {
       await logout()
@@ -69,11 +68,17 @@ const Navbar = () => {
           <Link to='/signin' className='p-4 hover:text-accent'>
             Sign In
           </Link>
-          <Link
-            to='/signup'
-            className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'
-          >
-            Sign Up
+          <Link to='/signup'>
+            <button
+              className={`${
+                theme === 'dark'
+                  ? 'bg-violet-950 text-violet-400 border-violet-400'
+                  : 'bg-white text-emerald-950 border-teal-950'
+              } border  border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group`}
+            >
+              <span className='bg-violet-400 shadow-violet-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]'></span>
+              Sign Up
+            </button>
           </Link>
         </div>
       )}
