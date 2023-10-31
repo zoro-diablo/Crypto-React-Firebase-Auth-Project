@@ -1,13 +1,12 @@
-### <h1><u>Coin Z Market</u></h1> 
 
 
 <p align="center">
-  <img src="https://i.postimg.cc/yYmS4BC4/new.png" width="200" alt="Coin Z Market Logo" align="center">
+  <img src="https://i.postimg.cc/659yjZyx/git-hub.gif" width="1000" alt="Coin Z Market Logo" align="center">
 </p>
 
 ## Overview
 
-Coin Z Market is a cryptocurrency market tracking web application. This project is currently in its beta phase, with limited functionalities implemented. It leverages various technologies and APIs to provide users with cryptocurrency market data.
+Tocken X is a cryptocurrency market tracking web application. This project is currently in its beta phase, with limited functionalities implemented. It leverages various technologies and APIs to provide users with cryptocurrency market data.
 
 Explore the latest version [Link to website](https://coin-z-market-exchange.netlify.app).
 
