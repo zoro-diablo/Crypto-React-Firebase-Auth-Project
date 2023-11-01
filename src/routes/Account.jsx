@@ -2,37 +2,81 @@ import React from 'react'
 import SavedCoin from '../components/SavedCoin'
 import { UserAuth } from '../context/AuthContext'
 import { Navigate, useNavigate } from 'react-router-dom'
-import SignOutButton from '../components/SignOutButton'
+import { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
+import photo from '../assets/user-icon-design-isolated-on-white-background-vector-29226751.jpg'
+import darkphoto from'../assets/download.png'
 
 const Account = () => {
-  const { user, logout } = UserAuth()
+  const { user } = UserAuth()
   const navigate = useNavigate()
-
+  
   const handleSignOut = async () => {
     try {
-      await logout()
       navigate('/')
     } catch (e) {
       console.log(e.message)
     }
   }
-
+  
+  const { theme } = useContext(ThemeContext)
+  
   if (user) {
     return (
-      <div className='max-w-[1140px] mx-auto'>
-        <div className='flex justify-between items-center my-12 py-8 rounded-div'>
-          <div>
-            <h1 className='text-2xl font-bold'>Account</h1>
-            <div>
-              <p>Welcome, {user?.email}</p>
+      <div className='max-w-[1140px] mx-auto mt-5'>
+        <div
+          className={
+            theme === 'dark'
+              ? 'card m-auto text-accent w-full sm:w-[clamp(1120px,80%,150px)] hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 hover:from-gray-800 hover:to-gray-950 border-r-2 border-t-2 border-gray-900 rounded-lg overflow-hidden'
+              : 'card m-auto text-accent w-full sm:w-[clamp(1120px,80%,150px)] hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-200 to-white hover:from-gray-100 hover:to-white border-r-2 border-t-2 border-gray-200 rounded-lg overflow-hidden'
+          }
+        >
+          <div class='px-4 py-6 sm:px-8 sm:py-10 grid sm:grid-cols-3'>
+            <div class='sm:col-span-1 text-center flex'>
+              <div class='w-20 h-20 rounded-full overflow-hidden mb-4 transform translate-y-0 shadow-lg transition-transform duration-300 group hover:translate-y-1 hover:shadow-xl hover:shadow-violet-900 absolute'>
+                <img
+                  src={theme === 'dark' ? darkphoto : photo}
+                  alt='Profile Picture'
+                  class='w-full object-cover'
+                />
+              </div>
+
+              <div class='uppercase font-bold text-xl sm:text-2xl my-auto mx-auto'>
+                {user?.email ? user.email.split('@')[0] : 'Guest'}
+              </div>
+            </div>
+            <div class='sm:col-span-1 text-center'>
+              <div class='text-accent'>
+                <div className='mt-5'>
+                  <p class='font-bold text-sm sm:text-base'>39.00 MLC</p>
+                  <p class='text-sm sm:text-base'>Perfect everywhere</p>
+                </div>
+              </div>
+            </div>
+            <div class='sm:col-span-1 text-center'>
+              <div class='text-accent'>
+                <div className='mt-5'>
+                  <button class='relative group overflow-hidden border-2 px-8 py-2 border-violet-500 rounded-md'>
+                    <span
+                      class='font-bold text-white text-lg relative z-10 group-hover:text-violet-500 duration-500'
+                      onClick={handleSignOut}
+                    >
+                      Home
+                    </span>
+                    <span class='absolute top-0 left-0 w-full bg-violet-500 duration-500 group-hover:-translate-x-full h-full'></span>
+                    <span class='absolute top-0 left-0 w-full bg-violet-500 duration-500 group-hover:translate-x-full h-full'></span>
+
+                    <span class='absolute top-0 left-0 w-full bg-violet-500 duration-500 delay-300 group-hover:-translate-y-full h-full'></span>
+                    <span class='absolute delay-300 top-0 left-0 w-full bg-violet-500 duration-500 group-hover:translate-y-full h-full'></span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div>
-            <button onClick={handleSignOut}>
-              <SignOutButton signoutbutton='Sign Out' />
-            </button>
-          </div>
+          <div class='h-2 w-full bg-gradient-to-l via-violet-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0'></div>
+          <div class='h-0.5 group-hover:w-full bg-gradient-to-l via-purple-950 group-hover:via-violet-500 w-[70%] m-auto rounded transition-all'></div>
         </div>
+
         <div className='flex justfiy-between items-center my-12 py-8 rounded-div'>
           <div className='w-full min-h-[300px]'>
             <h1 className='text-2xl font-bold py-4'>Watch List</h1>
