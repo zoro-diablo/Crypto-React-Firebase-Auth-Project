@@ -9,6 +9,9 @@
 .rounded-div {
   @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1290px] w-full mx-auto;
 }
+.rounded-footer {
+  @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1390px] w-full mx-auto;
+}
 .rounded-div-two {
   @apply rounded-2xl shadow-xl bg-primary px-2 max-w-[1290px] w-full mx-auto;
 }

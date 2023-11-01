@@ -10,7 +10,7 @@ const CoinSearch = ({ coins }) => {
   return (
     <div className='rounded-div-two my-4 '>
       <div className='flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right'>
-        <h1 className='text-2xl font-bold my-2'>Search Crypto</h1>
+        <h1 className='text-2xl font-semibold my-2 font-mono'>Crypto Market</h1>
         <form>
           <input
             className='w-full bg-primary border border-input px-4 py-2 rounded-2xl shadow-xl'
@@ -57,14 +57,14 @@ const CoinSearch = ({ coins }) => {
       <div className='flex justify-center '>
         <button
           onClick={() => setCurrentPage((old) => Math.max(old - 1, 1))}
-          className='py-2 px-4 bg-button text-btnText my-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl font-bold'
+          className='py-2 px-4 bg-button text-btnText  my-4 ml-2 rounded-lg shadow-lg hover:shadow-2xl font-bold'
         >
           Previous
         </button>
         <div className='self-center mx-4 font-bold border border-gray-500 border-[2]  px-3 py-2 rounded'>{currentPage}</div>
         <button
           onClick={() => setCurrentPage((old) => Math.min(old + 1, totalPages))}
-          className='py-2 px-4 bg-button text-btnText my-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl font-bold'
+          className='py-2 px-4 bg-button text-btnText  my-4 ml-2 rounded-lg shadow-lg hover:shadow-2xl font-bold'
         >
           Next
         </button>
