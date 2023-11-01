@@ -24,9 +24,9 @@ const Signin = () => {
 
   return (
     <AuthForm
-      heading='Log In'
+      heading='LOG IN'
       account='Dont have an account?'
-      type='Sign up'
+      type='Sign Up'
       handleSubmit={handleSubmit}
       error={error}
       setEmail={setEmail}

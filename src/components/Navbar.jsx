@@ -66,7 +66,7 @@ const Navbar = () => {
       ) : (
         <div className='hidden md:block mr-3'>
           <Link to='/signin' className='p-4 hover:text-accent'>
-            Sign In
+            Log In
           </Link>
           <Link to='/signup'>
             <button
