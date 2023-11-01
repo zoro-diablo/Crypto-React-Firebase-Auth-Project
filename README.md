@@ -8,7 +8,7 @@
 
 Tocken X is a cryptocurrency market tracking web application. This project is currently in its beta phase, with limited functionalities implemented. It leverages various technologies and APIs to provide users with cryptocurrency market data.
 
-Explore the latest version [Link to website](https://coin-z-market-exchange.netlify.app).
+Explore the latest version [Link to website](https://tocken-x.netlify.app/).
 
 ## Features
 
