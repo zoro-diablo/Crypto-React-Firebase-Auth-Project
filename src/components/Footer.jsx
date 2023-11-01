@@ -26,52 +26,85 @@ const Footer = () => {
 
         <div className='flex justify-evenly mt-3 w-full md:max-w-[600px] uppercase'>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base text-accent'>Support</h2>
+            <h2 className='font-bold mt-3 text-base text-accent hover:text-violet-600'>Support</h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono'>Help Center</li>
-              <li className='text-sm py-2 font-mono'>Contact Us</li>
-              <li className='text-sm py-2 font-mono'>API Status</li>
-              <li className='text-sm py-2 font-mono'>Documentation</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Help Center</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Contact Us</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>API Status</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Documentation</li>
             </ul>
           </div>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base  text-accent'>Info</h2>
+            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>Info</h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono'>About Us</li>
-              <li className='text-sm py-2 font-mono'>Careers</li>
-              <li className='text-sm py-2 font-mono'>Invest</li>
-              <li className='text-sm py-2 font-mono'>Legal</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>About Us</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Careers</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Invest</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Legal</li>
             </ul>
           </div>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base  text-accent'>Resources</h2>
+            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>Resources</h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono'>Our Products</li>
-              <li className='text-sm py-2 font-mono'>User Flow</li>
-              <li className='text-sm py-2 font-mono'>Premium Support</li>
-              <li className='text-sm py-2 font-mono'>User Strategy</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Our Products</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>User Flow</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>Premium Support</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>User Strategy</li>
             </ul>
           </div>
         </div>
         <div className='text-right'>
           <div className='w-full flex justify-end'>
             <div className='w-full md:w-[300px] py-4 relative'>
-              <p className='text-center md:text-left mt-1 text-accent text-lg font-bold'>
+              <p className='text-center md:text-left mt-1 text-accent text-lg font-bold hover:text-violet-600'>
                 Follow Us On
               </p>
               <div className='flex py-4 justify-between text-accent mr-6 mt-3'>
-                <AiOutlineInstagram size={33} className='cursor-pointer' />
-                <FaSquareXTwitter size={30} className='cursor-pointer' />
-                <FaFacebookF size={30} className='cursor-pointer' />
-                <FaGithub size={30} className='cursor-pointer' />
+                <AiOutlineInstagram
+                  size={36}
+                  className='cursor-pointer'
+                  onClick={() =>
+                    window.open(
+                      'https://www.instagram.com/zoro.diablo/',
+                      '_blank'
+                    )
+                  }
+                />
+                <FaSquareXTwitter
+                  size={30}
+                  className='cursor-pointer mt-[2px]'
+                  onClick={() =>
+                    window.open('https://twitter.com/zorodiablo', '_blank')
+                  }
+                />
+                <FaFacebookF
+                  size={30}
+                  className='cursor-pointer'
+                  onClick={() =>
+                    window.open(
+                      'https://www.facebook.com/people/Vyshnav-K/pfbid02WU4EtTFncG4NZ37JTyvcbX18XEG74uNGxghccUvuMmWejtL6Ek3Uvm4NdWit3x7Gl/?mibextid=ZbWKwL',
+                      '_blank'
+                    )
+                  }
+                />
+                <FaGithub
+                  size={30}
+                  className='cursor-pointer'
+                  onClick={() =>
+                    window.open('https://github.com/zoro-diablo', '_blank')
+                  }
+                />
               </div>
               <p className='text-left mt-5 font-bold'>© 2025 TockenX</p>
             </div>
           </div>
         </div>
       </div>
-      <p className='text-center py-4 mt-4 font-mono hover:text-blue-700 duration-300 ease-in-out'>
-        Powered by Coin Gecko Api
+      <p
+        className='text-center py-4 mt-4 font-mono hover:text-blue-700 duration-300 ease-in-out cursor-pointer'
+        onClick={() => window.open('https://github.com/zoro-diablo', '_blank')}
+      >
+        Develpoed by zoro-diablo
       </p>
     </div>
   )
