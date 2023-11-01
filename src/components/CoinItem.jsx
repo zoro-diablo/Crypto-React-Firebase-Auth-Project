@@ -1,16 +1,15 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { Sparklines, SparklinesLine } from 'react-sparklines'
 import { Link } from 'react-router-dom'
 import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai'
-import {UserAuth} from '../context/AuthContext'
-import {db} from '../firebase'
-import { arrayUnion,doc,updateDoc, } from 'firebase/firestore'
+import { UserAuth } from '../context/AuthContext'
+import { db } from '../firebase'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 
 const CoinItem = ({ coin }) => {
-
-  const [savedCoin,setSavedCoin] = useState(false)
-  const {user} = UserAuth()
+  const [savedCoin, setSavedCoin] = useState(false)
+  const { user } = UserAuth()
 
   const coinPath = doc(db, 'users', `${user?.email}`)
   const saveCoin = async () => {
@@ -30,7 +29,7 @@ const CoinItem = ({ coin }) => {
     }
   }
 
-  const [hovered,setHovered] = useState(false)
+  const [hovered, setHovered] = useState(false)
 
   return (
     <tr
@@ -60,15 +59,25 @@ const CoinItem = ({ coin }) => {
           </div>
         </Link>
       </td>
-      <td>{coin.symbol.toUpperCase()}</td>
-      <td>₹{coin.current_price.toLocaleString()}</td>
+      <td>
+        <Link to={`/coin/${coin.id}`}>{coin.symbol.toUpperCase()}</Link>
+      </td>
+      <td>
+        <Link to={`/coin/${coin.id}`}>
+          ₹{coin.current_price.toLocaleString()}
+        </Link>
+      </td>
       <td>
         {coin.price_change_percentage_24h > 0 ? (
           <div className='text-green-600'>
             <div className='hidden lg:block mr-2'>
-              <AiFillCaretUp className='float-left' />
+              <Link to={`/coin/${coin.id}`}>
+                <AiFillCaretUp className='float-left' />
+              </Link>
             </div>
-            {coin.price_change_percentage_24h.toFixed(2)}%
+            <Link to={`/coin/${coin.id}`}>
+              {coin.price_change_percentage_24h.toFixed(2)}%
+            </Link>
           </div>
         ) : (
           <div className='text-red-600'>
@@ -80,17 +89,23 @@ const CoinItem = ({ coin }) => {
         )}
       </td>
       <td className='w-[180px] hidden md:table-cell'>
-        ₹{coin.total_volume.toLocaleString()}
+        <Link to={`/coin/${coin.id}`}>
+          ₹{coin.total_volume.toLocaleString()}
+        </Link>
       </td>
       <td className='w-[180px] hidden sm:table-cell'>
-        ₹{coin.market_cap.toLocaleString()}
+        <Link to={`/coin/${coin.id}`}>₹{coin.market_cap.toLocaleString()}</Link>
       </td>
       <td>
-        <Sparklines data={coin.sparkline_in_7d.price}>
-          <SparklinesLine
-            color={coin.price_change_percentage_24h > 0 ? '#16c784' : '#ea3943'}
-          />
-        </Sparklines>
+        <Link to={`/coin/${coin.id}`}>
+          <Sparklines data={coin.sparkline_in_7d.price}>
+            <SparklinesLine
+              color={
+                coin.price_change_percentage_24h > 0 ? '#16c784' : '#ea3943'
+              }
+            />
+          </Sparklines>
+        </Link>
       </td>
     </tr>
   )

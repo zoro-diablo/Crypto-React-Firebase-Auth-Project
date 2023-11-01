@@ -10,7 +10,11 @@ const Footer = () => {
         <div className='flex justify-center md:justify-start'>
           <div className='w-full md:w-[400px] py-4  md:text-left'>
             <div className='flex'>
-              <img src={logo} alt='logo' className='ml-2 w-20' />
+              <img
+                src={logo}
+                alt='logo'
+                className='ml-2 w-20 transition-transform transform hover:scale-110 duration-500 ease-in-out'
+              />
               <h1 className='text-2xl mx-3 my-auto font-semibold font-mono text-center'>
                 Crypto Market
               </h1>
@@ -26,30 +30,60 @@ const Footer = () => {
 
         <div className='flex justify-evenly mt-3 w-full md:max-w-[600px] uppercase'>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base text-accent hover:text-violet-600'>Support</h2>
+            <h2 className='font-bold mt-3 text-base text-accent hover:text-violet-600'>
+              Support
+            </h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Help Center</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Contact Us</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>API Status</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Documentation</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Help Center
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Contact Us
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                API Status
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Documentation
+              </li>
             </ul>
           </div>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>Info</h2>
+            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>
+              Info
+            </h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>About Us</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Careers</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Invest</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Legal</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                About Us
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Careers
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Invest
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Legal
+              </li>
             </ul>
           </div>
           <div className='mx-4'>
-            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>Resources</h2>
+            <h2 className='font-bold mt-3 text-base  text-accent hover:text-violet-600'>
+              Resources
+            </h2>
             <ul className='mt-2 cursor-pointer'>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Our Products</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>User Flow</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>Premium Support</li>
-              <li className='text-sm py-2 font-mono hover:text-blue-300'>User Strategy</li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Our Products
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                User Flow
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                Premium Support
+              </li>
+              <li className='text-sm py-2 font-mono hover:text-blue-300'>
+                User Strategy
+              </li>
             </ul>
           </div>
         </div>
@@ -62,7 +96,7 @@ const Footer = () => {
               <div className='flex py-4 justify-between text-accent mr-6 mt-3'>
                 <AiOutlineInstagram
                   size={36}
-                  className='cursor-pointer'
+                  className='cursor-pointer hover:text-violet-600'
                   onClick={() =>
                     window.open(
                       'https://www.instagram.com/zoro.diablo/',
@@ -72,14 +106,14 @@ const Footer = () => {
                 />
                 <FaSquareXTwitter
                   size={30}
-                  className='cursor-pointer mt-[2px]'
+                  className='cursor-pointer mt-[2px] hover:text-violet-600'
                   onClick={() =>
                     window.open('https://twitter.com/zorodiablo', '_blank')
                   }
                 />
                 <FaFacebookF
                   size={30}
-                  className='cursor-pointer'
+                  className='cursor-pointer hover:text-violet-600'
                   onClick={() =>
                     window.open(
                       'https://www.facebook.com/people/Vyshnav-K/pfbid02WU4EtTFncG4NZ37JTyvcbX18XEG74uNGxghccUvuMmWejtL6Ek3Uvm4NdWit3x7Gl/?mibextid=ZbWKwL',
@@ -89,7 +123,7 @@ const Footer = () => {
                 />
                 <FaGithub
                   size={30}
-                  className='cursor-pointer'
+                  className='cursor-pointer hover:text-violet-600'
                   onClick={() =>
                     window.open('https://github.com/zoro-diablo', '_blank')
                   }
