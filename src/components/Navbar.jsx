@@ -113,7 +113,7 @@ const Navbar = () => {
               onClick={handleNav}
               className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl '
             >
-              Sign In
+              Log In
             </button>
           </Link>
           <Link to='/signup'>
