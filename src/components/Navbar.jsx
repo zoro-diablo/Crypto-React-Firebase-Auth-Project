@@ -6,6 +6,8 @@ import { UserAuth } from '../context/AuthContext'
 import logo from '../assets/White logo.gif'
 import logoTwo from '../assets/Dark logo.gif'
 import { ThemeContext } from '../context/ThemeContext'
+import SignOutButton from './SignOutButton'
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -59,8 +61,8 @@ const Navbar = () => {
           <Link to='/account' className='p-4 mx-2 hidden md:block'>
             Account
           </Link>
-          <button onClick={handleSignOut} className='mx-4'>
-            Sign Out
+          <button onClick={handleSignOut} className='mx-1'>
+            <SignOutButton signoutbutton='Sign Out' />
           </button>
         </div>
       ) : (

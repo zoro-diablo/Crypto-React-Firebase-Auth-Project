@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import { AiOutlineMail } from 'react-icons/ai'
-import Button from './Button'
+import Button from './AuthInOutButton'
 
 const AuthForm = ({
   heading,
@@ -69,7 +69,7 @@ const AuthForm = ({
               </button>
             </div>
             {error && (
-              <p className='text-red-600 text-base font-bold mt-1 ml-3'>{error}</p> // Display error message
+              <p className='text-red-600 text-base font-semibold mt-1 ml-3'>{error}</p> // Display error message
             )}
           </div>
           <div className='mt-10'>
