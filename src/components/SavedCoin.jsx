@@ -5,7 +5,7 @@ import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 import { UserAuth } from '../context/AuthContext'
 
-const SavedCoin = () => {
+const SavedCoin = ({ sendDataToParent }) => {
   const [coins, setCoins] = useState([])
   const { user } = UserAuth()
 
@@ -27,6 +27,12 @@ const SavedCoin = () => {
     }
   }
 
+  
+  
+  
+  let coinCount = coins?.length
+  sendDataToParent(coinCount)
+  
   return (
     <div>
       {coins?.length === 0 ? (

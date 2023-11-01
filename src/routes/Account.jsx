@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SavedCoin from '../components/SavedCoin'
 import { UserAuth } from '../context/AuthContext'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 import photo from '../assets/user-icon-design-isolated-on-white-background-vector-29226751.jpg'
-import darkphoto from'../assets/download.png'
+import darkphoto from '../assets/download.png'
 
 const Account = () => {
   const { user } = UserAuth()
   const navigate = useNavigate()
-  
+
+  const [childData, setChildData] = useState(null)
+
+  const receiveDataFromChild = (data) => {
+    setChildData(data)
+  }
+
   const handleSignOut = async () => {
     try {
       navigate('/')
@@ -18,9 +24,9 @@ const Account = () => {
       console.log(e.message)
     }
   }
-  
+
   const { theme } = useContext(ThemeContext)
-  
+
   if (user) {
     return (
       <div className='max-w-[1140px] mx-auto mt-5'>
@@ -45,14 +51,15 @@ const Account = () => {
                 {user?.email ? user.email.split('@')[0] : 'Guest'}
               </div>
             </div>
-            <div class='sm:col-span-1 text-center'>
-              <div class='text-accent'>
+            <div className='sm:col-span-1 text-center'>
+              <div className='text-accent'>
                 <div className='mt-5'>
-                  <p class='font-bold text-sm sm:text-base'>39.00 MLC</p>
-                  <p class='text-sm sm:text-base'>Perfect everywhere</p>
+                  <p className='font-bold text-4xl'>{childData}</p>
+                  <p className='text-lg font-bold mt-2 sm:text-base'>Coins Wishlisted</p>
                 </div>
               </div>
             </div>
+
             <div class='sm:col-span-1 text-center'>
               <div class='text-accent'>
                 <div className='mt-5'>
@@ -80,7 +87,7 @@ const Account = () => {
         <div className='flex justfiy-between items-center my-12 py-8 rounded-div'>
           <div className='w-full min-h-[300px]'>
             <h1 className='text-2xl font-bold py-4'>Watch List</h1>
-            <SavedCoin />
+            <SavedCoin sendDataToParent={receiveDataFromChild} />
           </div>
         </div>
       </div>
