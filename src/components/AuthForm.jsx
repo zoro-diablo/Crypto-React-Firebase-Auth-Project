@@ -33,9 +33,6 @@ const AuthForm = ({
         >
           {heading}
         </h1>
-        {error && (
-          <p className='bg-red-300 p-3 my-2'>{error}</p> // Display error message
-        )}
         <form onSubmit={handleSubmit}>
           <div className='my-4'>
             <label className='font-semibold'>Email</label>
@@ -72,11 +69,11 @@ const AuthForm = ({
               </button>
             </div>
             {error && (
-              <p className='text-red-600 text-sm mt-1 ml-3'>{error}</p> // Display error message
+              <p className='text-red-600 text-base font-bold mt-1 ml-3'>{error}</p> // Display error message
             )}
           </div>
           <div className='mt-10'>
-            <Button buttonText={buttonText} />
+            <Button buttonText={buttonText}/>
           </div>
         </form>
         <p className='my-4'>
