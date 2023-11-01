@@ -1,6 +1,7 @@
-import React from 'react'
-import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import { AiOutlineMail } from 'react-icons/ai'
 import Button from './Button'
 
 const AuthForm = ({
@@ -13,6 +14,12 @@ const AuthForm = ({
   setPassword,
   buttonText,
 }) => {
+  const [passwordVisible, setPasswordVisible] = useState(false)
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible)
+  }
+
   return (
     <div>
       <link
@@ -26,7 +33,9 @@ const AuthForm = ({
         >
           {heading}
         </h1>
-        {error ? <p className='bg-red-300 p-3 my-2'>{error}</p> : null}
+        {error && (
+          <p className='bg-red-300 p-3 my-2'>{error}</p> // Display error message
+        )}
         <form onSubmit={handleSubmit}>
           <div className='my-4'>
             <label className='font-semibold'>Email</label>
@@ -48,13 +57,23 @@ const AuthForm = ({
               <input
                 onChange={(e) => setPassword(e.target.value)}
                 className='w-full py-[11px] px-6 bg-primary border text-lg border-input rounded-2xl font-bold '
-                type='password'
+                type={passwordVisible ? 'text' : 'password'}
               />
-              <AiFillLock
+              <button
+                type='button' // Prevent form submission
+                onClick={togglePasswordVisibility}
                 className='absolute right-4 top-4 text-gray-400'
-                size={20}
-              />
+              >
+                {passwordVisible ? (
+                  <AiOutlineEyeInvisible size={20} />
+                ) : (
+                  <AiOutlineEye size={20} />
+                )}
+              </button>
             </div>
+            {error && (
+              <p className='text-red-600 text-sm mt-1 ml-3'>{error}</p> // Display error message
+            )}
           </div>
           <div className='mt-10'>
             <Button buttonText={buttonText} />

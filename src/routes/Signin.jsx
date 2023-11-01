@@ -10,17 +10,21 @@ const Signin = () => {
   const navigate = useNavigate()
   const { signIn } = UserAuth()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    try {
-      await signIn(email, password)
-      navigate('/account')
-    } catch (e) {
-      setError(e.message)
-      console.log(e.message)
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault()
+  setError('')
+  try {
+    await signIn(email, password)
+    navigate('/account')
+  } catch (e) {
+    const errorCode = e.code.split('/')[1] // Get the error code after "auth/"
+    setError(errorCode)
+    setError(errorCode.charAt(0).toUpperCase() + errorCode.slice(1))
+    setTimeout(() => setError(''), 3000)
+    console.log(e.message)
   }
+}
+
 
   return (
     <AuthForm
