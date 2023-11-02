@@ -42,7 +42,7 @@ const Account = () => {
               <div class='w-20 h-20 rounded-full overflow-hidden mb-4 transform translate-y-0 shadow-lg transition-transform duration-300 group hover:translate-y-1 hover:shadow-xl hover:shadow-violet-900 absolute'>
                 <img
                   src={theme === 'dark' ? darkphoto : photo}
-                  alt='Profile Picture'
+                  alt='Profile'
                   class='w-full object-cover'
                 />
               </div>
