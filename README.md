@@ -30,6 +30,9 @@ Explore the latest version [Link to website](https://tocken-x.netlify.app/).
 ### Live Crypto Market
 ![Dashboard](https://i.postimg.cc/G3F4G6LF/Screenshot-2023-11-02-103319.png)
 
+### Detailed View
+![Dashboard](https://i.postimg.cc/KYRCHW9j/Screenshot-2023-11-03-002105.png)
+
 ### Theme Switching
 ![Theme Switching](https://i.postimg.cc/PxzdvsWN/Screenshot-2023-11-02-103507.png)
 
