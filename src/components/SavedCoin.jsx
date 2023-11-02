@@ -1,3 +1,4 @@
+// SavedCoin.js
 import React, { useEffect, useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
@@ -27,12 +28,11 @@ const SavedCoin = ({ sendDataToParent }) => {
     }
   }
 
-  
-  
-  
-  let coinCount = coins?.length
-  sendDataToParent(coinCount)
-  
+  useEffect(() => {
+    let coinCount = coins?.length
+    sendDataToParent(coinCount)
+  }, [coins, sendDataToParent])
+
   return (
     <div>
       {coins?.length === 0 ? (

@@ -6,7 +6,7 @@ const SignOutButton = ({ signoutbutton }) => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <button
+    <div
       className={
         theme === 'dark'
           ? 'bg-red-950 text-red-400 border border-red-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group'
@@ -21,7 +21,7 @@ const SignOutButton = ({ signoutbutton }) => {
         }
       ></span>
       {signoutbutton}
-    </button>
+    </div>
   )
 }
 
