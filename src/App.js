@@ -21,6 +21,7 @@ function App() {
   useEffect(()=>{
     axios.get(url).then((response)=>{
       setCoins(response.data)
+      // console.log(response.data);
     }).catch((error)=>{
       console.error('Axios Error:', error)
     })

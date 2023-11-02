@@ -83,7 +83,7 @@ const Account = () => {
               </div>
             </div>
           </div>
-          <div className='h-2 w-full bg-gradient-to-l via-violet-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0'></div>
+          <div className='h-2  bg-gradient-to-l via-violet-500 group-hover:blur-xl blur-2xl m-auto rounded transition-all absolute bottom-0'></div>
           <div className='h-0.5 group-hover:w-full bg-gradient-to-l via-purple-950 group-hover:via-violet-500 w-[70%] m-auto rounded transition-all'></div>
         </div>
 

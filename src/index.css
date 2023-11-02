@@ -22,6 +22,8 @@
   @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1450px] w-full mx-auto;
 }
 
+
+
 .dark {
   --color-bg-primary: #0d1421;
   --color-bg-secondary: #393c40;
@@ -49,5 +51,4 @@
 .light .custom-div {
   background-color: #dce4ec45;
 }
-
 
