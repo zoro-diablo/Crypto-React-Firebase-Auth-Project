@@ -87,9 +87,16 @@ const Account = () => {
           <div className='h-0.5 group-hover:w-full bg-gradient-to-l via-purple-950 group-hover:via-violet-500 w-[70%] m-auto rounded transition-all'></div>
         </div>
 
-        <div className='flex justfiy-between items-center my-12 py-8 rounded-div'>
+        <div
+          className='flex justfiy-between items-center my-12 py-8 rounded-div'
+          className={
+            theme === 'dark'
+              ? 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 '
+              : 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 brightness-100 transition-all group bg-gradient-to-tl from-slate-100 to-white '
+          }
+        >
           <div className='w-full min-h-[300px]'>
-            <h1 className='text-2xl font-bold py-4'>Watch List</h1>
+            <h1 className='text-2xl font-bold py-4 mx-5'>Watch List</h1>
             <SavedCoin sendDataToParent={receiveDataFromChild} />
           </div>
         </div>

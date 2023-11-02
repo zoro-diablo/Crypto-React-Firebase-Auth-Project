@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import CoinItem from './CoinItem'
+import { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 
 const CoinSearch = ({ coins }) => {
   const [searchText, setSearchText] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const coinsPerPage = 20
   const totalPages = Math.ceil(coins.length / coinsPerPage)
+  const { theme } = useContext(ThemeContext)
 
   return (
     <div className='rounded-div-two my-4 '>
@@ -55,19 +58,29 @@ const CoinSearch = ({ coins }) => {
       </table>
 
       <div className='flex justify-center '>
-        <button
+        <div
           onClick={() => setCurrentPage((old) => Math.max(old - 1, 1))}
-          className='py-2 px-4 bg-button text-btnText  my-4 ml-2 rounded-lg shadow-lg hover:shadow-2xl font-bold'
+          className={
+            theme === 'dark'
+              ? 'cursor-pointer transition-all bg-violet-700 text-white px-8 py-2 rounded-lg border-cyan-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] my-3'
+              : 'cursor-pointer transition-all bg-slate-900 text-white px-8 py-2 rounded-lg border-cyan-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] my-3'
+          }
         >
           Previous
-        </button>
-        <div className='self-center mx-4 font-bold border border-gray-500 border-[2]  px-3 py-2 rounded'>{currentPage}</div>
-        <button
+        </div>
+        <div className='self-center mx-4 font-bold border border-gray-500 border-[2]  px-3 py-2 rounded'>
+          {currentPage}
+        </div>
+        <div
           onClick={() => setCurrentPage((old) => Math.min(old + 1, totalPages))}
-          className='py-2 px-4 bg-button text-btnText  my-4 ml-2 rounded-lg shadow-lg hover:shadow-2xl font-bold'
+          className={
+            theme === 'dark'
+              ? 'cursor-pointer transition-all bg-violet-700 text-white px-10 py-2 rounded-lg border-cyan-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] my-3'
+              : 'cursor-pointer transition-all bg-slate-900 text-white px-10 py-2 rounded-lg border-cyan-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] my-3'
+          }
         >
           Next
-        </button>
+        </div>
       </div>
     </div>
   )
