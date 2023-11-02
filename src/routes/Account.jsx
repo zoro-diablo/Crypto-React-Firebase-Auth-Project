@@ -88,7 +88,6 @@ const Account = () => {
         </div>
 
         <div
-          className='flex justfiy-between items-center my-12 py-8 rounded-div'
           className={
             theme === 'dark'
               ? 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 '
