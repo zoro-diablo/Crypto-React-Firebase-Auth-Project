@@ -34,7 +34,7 @@ const Account = () => {
           className={
             theme === 'dark'
               ? 'card m-auto text-accent w-full sm:w-[clamp(1120px,80%,150px)] hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 hover:from-gray-800 hover:to-gray-950 border-r-2 border-t-2 border-gray-900 rounded-lg overflow-hidden'
-              : 'card m-auto text-accent w-full sm:w-[clamp(1120px,80%,150px)] hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-200 to-white hover:from-gray-100 hover:to-white border-r-2 border-t-2 border-gray-200 rounded-lg overflow-hidden'
+              : ' border-2 card m-auto text-accent w-full sm:w-[clamp(1120px,80%,150px)] hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-200 to-white hover:from-gray-100 hover:to-white border-r-2 border-t-2 border-gray-200 rounded-lg overflow-hidden'
           }
         >
           <div class='px-4 py-6 sm:px-8 sm:py-10 grid sm:grid-cols-3'>
