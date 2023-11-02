@@ -27,11 +27,11 @@ Explore the latest version [Link to website](https://tocken-x.netlify.app/).
 - **Tailwind Styles:** Employs Tailwind CSS for efficient and responsive styling.
 
 - **Axios:** Utilizes Axios for simplified and reliable HTTP requests to fetch data from APIs.
-### Dashboard
-![Dashboard](https://i.postimg.cc/yYvrTMpB/Screenshot-2023-10-31-105202.png)
+### Live Crypto Market
+![Dashboard](https://i.postimg.cc/G3F4G6LF/Screenshot-2023-11-02-103319.png)
 
 ### Theme Switching
-![Theme Switching](https://i.postimg.cc/BQqVHSgM/Screenshot-2023-10-31-105452.png)
+![Theme Switching](https://i.postimg.cc/PxzdvsWN/Screenshot-2023-11-02-103507.png)
 
 ## Installation
 
