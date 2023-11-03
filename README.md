@@ -34,7 +34,7 @@ Explore the latest version [Link to website](https://tocken-x.netlify.app/).
 ![Dashboard](https://i.postimg.cc/KYRCHW9j/Screenshot-2023-11-03-002105.png)
 
 ### Theme Switching
-![Theme Switching](https://i.postimg.cc/PxzdvsWN/Screenshot-2023-11-02-103507.png)
+![Theme Switching](https://i.postimg.cc/Kj8LDM4V/Screenshot-2023-11-03-173536.png)
 
 ## Installation
 
