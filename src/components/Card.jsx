@@ -9,6 +9,8 @@ import { ThemeContext } from '../context/ThemeContext'
 
 
 const Card = ({ coin, deleteCoin }) => {
+
+
     const { theme } = useContext(ThemeContext)
   return (
     <div className='flex mb-4'>

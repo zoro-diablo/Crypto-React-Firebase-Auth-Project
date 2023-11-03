@@ -5,10 +5,16 @@ import { doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '../firebase'
 import { UserAuth } from '../context/AuthContext'
 import Card from './Card'
+import CardLoader from './CardLoader'
 
 const SavedCoin = ({ sendDataToParent }) => {
   const [coins, setCoins] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const { user } = UserAuth()
+
+  setTimeout(()=>{
+    setIsLoading(false)
+  },2000)
 
   useEffect(() => {
     onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
@@ -46,12 +52,13 @@ const SavedCoin = ({ sendDataToParent }) => {
             <div className='grid mb-3 grid-cols-2 md:grid-cols-4 gap-2 '>
               {coins?.map((coin, kkp) => (
                 <div>
-                  <Card
-                    coin={coin}
-                    deleteCoin={deleteCoin}
-                    key={kkp}
-                  
-                  />
+                  {isLoading ? (
+                    <div className='h-full w-full flex items-center justify-center'>
+                      <CardLoader />
+                    </div>
+                  ) : (
+                    <Card coin={coin} deleteCoin={deleteCoin} key={kkp} />
+                  )}
                 </div>
               ))}
             </div>
