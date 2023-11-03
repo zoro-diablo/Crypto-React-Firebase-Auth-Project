@@ -23,6 +23,7 @@ const CoinItem = ({ coin }) => {
           rank: coin.market_cap_rank,
           symbol: coin.symbol,
           upordown: coin.price_change_percentage_24h,
+          spark: coin.sparkline_in_7d.price,
         }),
       })
     } else {

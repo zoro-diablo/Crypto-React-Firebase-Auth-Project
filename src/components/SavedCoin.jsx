@@ -43,9 +43,16 @@ const SavedCoin = ({ sendDataToParent }) => {
           </p>
         ) : (
           <div className='w-full border-collapse text-center'>
-            <div>
-              {coins?.map((coin,kkp) => (
-                <Card coin={coin} deleteCoin={deleteCoin} key={kkp}/>
+            <div className='grid mb-3 grid-cols-2 md:grid-cols-4 gap-2 '>
+              {coins?.map((coin, kkp) => (
+                <div>
+                  <Card
+                    coin={coin}
+                    deleteCoin={deleteCoin}
+                    key={kkp}
+                  
+                  />
+                </div>
               ))}
             </div>
           </div>

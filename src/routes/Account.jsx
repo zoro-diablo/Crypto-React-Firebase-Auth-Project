@@ -30,7 +30,7 @@ const Account = () => {
 
   if (user) {
     return (
-      <div className='max-w-[1140px] mx-auto mt-5'>
+      <div className='max-w-[1140px] mx-auto mt-5 '>
         <div
           className={
             theme === 'dark'
@@ -90,13 +90,17 @@ const Account = () => {
         <div
           className={
             theme === 'dark'
-              ? 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 '
-              : 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 brightness-100 transition-all group bg-gradient-to-tl from-slate-100 to-white '
+              ? 'flex justfiy-between items-center  rounded-div mx-auto my-12 py-8 hover:brightness-90 transition-all  bg-gradient-to-tl from-gray-900 to-gray-950 '
+              : 'flex justfiy-between  items-center  rounded-div mx-auto my-12 py-8 brightness-100 transition-all  bg-gradient-to-tl from-slate-400 to-slate-100'
           }
         >
-          <div className='w-full min-h-[300px]'>
-            <h1 className='text-2xl font-bold py-4 mx-5'>Watch List</h1>
-            <SavedCoin sendDataToParent={receiveDataFromChild} />
+          <div className='w-full min-h-[300px] '>
+            <h1 className='text-2xl font-bold py-4 ml-6'>Watch List</h1>
+            <div className='border-t border-slate-600 '>
+              <div className='mt-6'>
+                <SavedCoin sendDataToParent={receiveDataFromChild} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

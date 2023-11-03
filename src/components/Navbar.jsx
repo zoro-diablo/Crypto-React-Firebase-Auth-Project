@@ -127,7 +127,9 @@ const Navbar = () => {
             </button>
           </Link>
         </div>
+        
       </div>
+      
     </div>
   )
 }

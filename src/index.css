@@ -13,7 +13,7 @@
   @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1290px] w-full ;
 }
 .rounded-footer {
-  @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1390px] w-full mx-auto;
+  @apply  border-secondary  rounded-2xl shadow-xl footer-div px-2 max-w-[1390px] w-full mx-auto;
 }
 .rounded-div-two {
   @apply rounded-2xl shadow-xl bg-primary px-2 max-w-[1290px] w-full mx-auto;
@@ -36,13 +36,14 @@
 
 .light {
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #edf2f7;
+  --color-bg-secondary: #dcdfe3;
   --color-text-primary: #2d3748;
   --color-text-secondary: #4a5568;
   --color-text-accent: #2b6cb0;
   --color-bg-input: #edf2f7;
   --color-bg-button: #2b6cb0;
 }
+
 
 .dark .custom-div {
   background-color: #222531;
@@ -52,3 +53,12 @@
   background-color: #dce4ec45;
 }
 
+.dark .footer-div{
+background-color: #0d131e;
+border: 1px solid #222531;
+}
+
+.light .footer-div{
+background-color: #c8cfd745;
+border: 3px solid #98bde345;
+}
