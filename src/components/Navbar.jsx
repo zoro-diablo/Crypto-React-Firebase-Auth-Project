@@ -8,7 +8,6 @@ import logoTwo from '../assets/Dark logo.gif'
 import { ThemeContext } from '../context/ThemeContext'
 import SignOutButton from './SignOutButton'
 
-
 const Navbar = () => {
   const [nav, setNav] = useState(false)
 
@@ -56,7 +55,7 @@ const Navbar = () => {
         <ThemeToggle />
       </div>
 
-      {user?.email ? (
+      {user ? (
         <div className='flex'>
           <Link to='/account' className='p-4 mx-2 hidden md:block'>
             Account
@@ -127,9 +126,7 @@ const Navbar = () => {
             </button>
           </Link>
         </div>
-        
       </div>
-      
     </div>
   )
 }
