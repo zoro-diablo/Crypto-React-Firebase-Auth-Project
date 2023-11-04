@@ -14,7 +14,13 @@ const Card = ({ coin, deleteCoin }) => {
     const { theme } = useContext(ThemeContext)
   return (
     <div className='flex mb-4'>
-      <div className='relative group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto'>
+      <div
+        className={
+          theme === 'dark'
+            ? ('relative cardshadowdark group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105')
+            : ('relative cardshadowlight group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105')
+        }
+      >
         <div
           className={
             theme === 'dark'
@@ -45,11 +51,7 @@ const Card = ({ coin, deleteCoin }) => {
             />
           </div>
           <Link to={`/coin/${coin.id}`}>
-            <img
-              src={coin?.image}
-              className='w-20 mx-auto my-4 " '
-              alt='/'
-            />
+            <img src={coin?.image} className='w-20 mx-auto my-4' alt='/' />
           </Link>
         </div>
         <div className='absolute bg-gray-50 -bottom-24 w-56 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500'>

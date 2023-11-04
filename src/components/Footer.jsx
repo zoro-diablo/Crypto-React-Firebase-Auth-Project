@@ -3,6 +3,8 @@ import { AiOutlineInstagram } from 'react-icons/ai'
 import { FaGithub , FaFacebookF  } from 'react-icons/fa'
 import logo from '../assets/favicon.png'
 import { FaSquareXTwitter } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <div className='rounded-footer mt-8 pt-8 text-primary mb-4'>
@@ -10,11 +12,13 @@ const Footer = () => {
         <div className='flex justify-center md:justify-start'>
           <div className='w-full md:w-[400px] py-4  md:text-left'>
             <div className='flex'>
-              <img
-                src={logo}
-                alt='logo'
-                className='ml-2 w-20 transition-transform transform hover:scale-110 duration-500 ease-in-out'
-              />
+              <Link to='/' className='cursor-pointer'>
+                <img
+                  src={logo}
+                  alt='logo'
+                  className='ml-2 w-20 transition-transform transform hover:scale-110 duration-500 ease-in-out'
+                />
+              </Link>
               <h1 className='text-2xl mx-3 my-auto font-semibold font-mono text-center'>
                 Crypto Market
               </h1>

@@ -19,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
       .then((userCredential) => {
         // Signed in
         var user = userCredential.user
-        console.log(user);
+        console.log(`Your registered email is ${user.email}.`)
         // ...
         return setDoc(doc(db, 'users', email), {
           watchList: [],

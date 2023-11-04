@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardLoader = () => {
   return (
-    <div class='animate-pulse flex flex-col items-center gap-4 w-60'>
+    <div className='animate-pulse flex flex-col items-center gap-4 w-60 mb-5'>
       <div>
         <div className='w-48 h-6 bg-slate-400 rounded-md'></div>
         <div className='w-28 h-4 bg-slate-400 mx-auto mt-3 rounded-md'></div>

@@ -5,9 +5,8 @@ import {
   SparklinesLine,
   SparklinesSpots,
   SparklinesReferenceLine,
-  SparklinesNormalBand,
 } from 'react-sparklines'
-
+import SmallLoader from '../components/SmallLoader'
 import { FaTwitter, FaFacebook, FaReddit, FaGithub } from 'react-icons/fa'
 import DOMPurify from 'dompurify'
 import { useParams } from 'react-router-dom'
@@ -15,37 +14,44 @@ import { useContext } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 
 const CoinPage = () => {
-  const [coin, setCoin] = useState([])
+  const [coin, setCoin] = useState({})
   const params = useParams()
   const { theme } = useContext(ThemeContext)
-
-  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false&sparkline=true`
+
     axios
       .get(url)
       .then((response) => {
         setCoin(response.data)
+        setIsLoading(false)
       })
       .catch((error) => {
         console.error('Axios Error:', error)
+        setIsLoading(false)
       })
-  }, [url])
+  }, [params.coinId])
 
   return (
     <div
-      className={
+      className={`rounded-coin-page mx-auto my-12 py-8 ${
         theme === 'dark'
-          ? 'rounded-coin-page mx-auto my-12 py-8 hover:brightness-90 transition-all group bg-gradient-to-tl from-gray-900 to-gray-950 hover:from-gray-800 hover:to-gray-950 border-r-2 border-t-2 border-gray-900 rounded-lg overflow-hidden'
-          : 'rounded-coin-page mx-auto my-12 py-8 brightness-100 transition-all group bg-gradient-to-tl from-slate-100 to-white hover:from-slate-100 hover:to-white border-r-2 border-t-2 border-slate-200 rounded-lg overflow-hidden'
-      }
+          ? 'bg-gradient-to-tl from-gray-900 to-gray-950 hover:from-gray-800 hover:to-gray-950 border-r-2 border-t-2 border-gray-900'
+          : 'brightness-100 bg-gradient-to-tl from-slate-100 to-white hover:from-slate-100 hover:to-white border-r-2 border-t-2 border-slate-200'
+      } rounded-lg overflow-hidden`}
     >
       <div className='mx-5'>
         <div className='flex py-8'>
           <div className='flex'>
-            <img className='w-20 mr-8' src={coin.image?.large} alt='/' />
+            {isLoading ? (
+              <SmallLoader />
+            ) : (
+              <img className='w-20 mr-8' src={coin.image?.large} alt='/' />
+            )}
             <div className='my-auto'>
-              <p className='text-3xl font-bold'>{coin?.name}</p>
+              <p className='text-3xl font-bold'>{coin.name}</p>
               <p className='mt-1 font-semibold'>
                 ({coin.symbol?.toUpperCase()} / INR)
               </p>
@@ -63,29 +69,31 @@ const CoinPage = () => {
               <p className='my-auto font-bold'>7 Day</p>
             </div>
             <div>
-              <Sparklines
-                data={coin.market_data?.sparkline_7d.price}
-                margin={6}
-              >
-                <SparklinesLine
-                  style={{ strokeWidth: '1', stroke: 'teal', fill: 'none' }}
-                />
-                <SparklinesSpots
-                  size={2}
-                  style={{ stroke: '#336aff', strokeWidth: '1', fill: 'white' }}
-                />
-
-                <SparklinesReferenceLine
-                  style={{
-                    stroke: 'red',
-                    strokeOpacity: 0.75,
-                    strokeDasharray: '2, 2',
-                  }}
-                />
-                <SparklinesNormalBand
-                  style={{ fill: '#336aff', fillOpacity: 0.1 }}
-                />
-              </Sparklines>
+              {coin.market_data?.sparkline_7d ? (
+                <Sparklines
+                  data={coin.market_data.sparkline_7d.price}
+                  margin={6}
+                >
+                  <SparklinesLine
+                    style={{ strokeWidth: '1', stroke: 'teal', fill: 'none' }}
+                  />
+                  <SparklinesSpots
+                    size={2}
+                    style={{
+                      stroke: '#336aff',
+                      strokeWidth: '1',
+                      fill: 'white',
+                    }}
+                  />
+                  <SparklinesReferenceLine
+                    style={{
+                      stroke: 'red',
+                      strokeOpacity: 0.75,
+                      strokeDasharray: '2, 2',
+                    }}
+                  />
+                </Sparklines>
+              ) : null}
             </div>
             <div className='flex justify-between py-4'>
               <div>
@@ -100,7 +108,7 @@ const CoinPage = () => {
                 <p className='text-gray-500 text-sm font-mono text-right'>
                   Volume (24h)
                 </p>
-                {coin.market_data?.market_cap ? (
+                {coin.market_data?.total_volume ? (
                   <p className='font-bold'>
                     ₹{coin.market_data.total_volume.inr.toLocaleString()}
                   </p>
@@ -138,20 +146,16 @@ const CoinPage = () => {
                 <p className='font-bold'>{coin.market_cap_rank}</p>
               </div>
               <div className='mx-auto'>
-                <p className='text-gray-500 text-sm font-mono '>
+                <p className='text-gray-500 text-sm font-mono'>
                   Hashing Algorithm
                 </p>
-                {coin.hashing_algorithm ? (
-                  <p className='font-bold'>{coin.hashing_algorithm}</p>
-                ) : null}
+                <p className='font-bold'>{coin.hashing_algorithm || 'Null'}</p>
               </div>
               <div className=' mx-auto'>
                 <p className='text-gray-500 text-sm font-mono'>Trust Score</p>
-                <p className='font-bold'>
-                  {coin.tickers ? (
-                    <p>{coin.liquidity_score.toFixed(2)}</p>
-                  ) : null}
-                </p>
+                <div className='font-bold'>
+                  {coin.tickers ? coin.liquidity_score.toFixed(2) : null}
+                </div>
               </div>
             </div>
             <div className='flex justify-between py-4'>
@@ -229,7 +233,8 @@ const CoinPage = () => {
         {/* Description */}
         <div className='py-4'>
           <p className='text-xl font-bold'>About {coin.name}</p>
-          <p className='mt-6'
+          <p
+            className='mt-6'
             dangerouslySetInnerHTML={{
               __html: DOMPurify.sanitize(
                 coin.description ? coin.description.en : ''

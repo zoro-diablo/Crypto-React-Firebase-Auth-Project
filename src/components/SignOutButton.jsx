@@ -20,7 +20,7 @@ const SignOutButton = ({ signoutbutton }) => {
             : 'bg-red-400 shadow-red-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0 0 10px 10px rgba(0,0,0,0.3)]'
         }
       ></span>
-      {signoutbutton}
+      <div className='whitespace-nowrap'>{signoutbutton}</div>
     </div>
   )
 }
