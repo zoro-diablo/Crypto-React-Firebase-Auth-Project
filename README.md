@@ -14,6 +14,8 @@ Explore the latest version [Link to website](https://tocken-x.netlify.app/).
 
 - **Firebase Authentication:** Secure user authentication for a personalized experience.
 
+- **Firestore Wishlist:** Users can create and manage a wishlist of their favorite cryptocurrencies, and this data will be saved to their account.
+
 - **Coin Gecko API:** Accesses the Coin Gecko API to retrieve real-time cryptocurrency market data.
 
 - **Dynamic Routing:** Utilizes React Router for smooth navigation between different sections of the app.
