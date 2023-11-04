@@ -57,7 +57,7 @@ const Account = () => {
                 <div className='mt-5'>
                   <p className='font-bold text-4xl'>{childData}</p>
                   <p className='text-lg font-bold mt-2 sm:text-base'>
-                    Coins Wishlisted
+                    Coins Watch Listed
                   </p>
                 </div>
               </div>

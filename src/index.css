@@ -74,3 +74,25 @@ border: 3px solid #98bde345;
 :hover.cardshadowlight{
   box-shadow: rgba(92, 214, 255, 0.56) 0px 22px 70px 4px;
 }
+
+@keyframes changeBorderColor {
+  0% {
+    border-color: rgb(248, 8, 248);
+  }
+  25% {
+    border-color: rgb(128, 0, 255);
+  }
+  50% {
+    border-color: rgb(208, 0, 255);
+  }
+  75% {
+    border-color: rgb(128, 0, 255);
+  }
+  100% {
+    border-color: rgb(217, 0, 255);
+  }
+}
+
+.animate-border-color {
+  animation: changeBorderColor 5s infinite;
+}

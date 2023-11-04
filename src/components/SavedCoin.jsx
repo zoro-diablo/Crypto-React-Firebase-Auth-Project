@@ -6,6 +6,7 @@ import { UserAuth } from '../context/AuthContext'
 import Card from './Card'
 import CardLoader from './CardLoader'
 import { v4 as uuidv4 } from 'uuid'
+import boxPhoto from '../assets/5928293_2953960.svg'
 
 const SavedCoin = ({ sendDataToParent }) => {
   const [coins, setCoins] = useState([])
@@ -43,9 +44,12 @@ const SavedCoin = ({ sendDataToParent }) => {
     <div>
       <div className='mx-4'>
         {coins?.length === 0 ? (
-          <p>
-            You don't have any coins saved. Please save a coin to add it to your
-            watch list. <Link to='/'>Click here to search coins.</Link>
+          <p className=' flex-row md:flex justify-center items-center h-full my-auto text-lg font-semibold text-center md:'>
+            <Link to='/'>
+              You don't have any coins saved. Please save a coin to add it to
+              your watch list.{' '}
+            </Link>
+            <img src={boxPhoto} alt='box' height={150} width={350} />
           </p>
         ) : (
           <div className='w-full border-collapse text-center'>

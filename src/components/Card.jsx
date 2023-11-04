@@ -17,8 +17,8 @@ const Card = ({ coin, deleteCoin }) => {
       <div
         className={
           theme === 'dark'
-            ? ('relative cardshadowdark group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105')
-            : ('relative cardshadowlight group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105')
+            ? 'relative  cardshadowdark group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105'
+            : 'relative cardshadowlight group cursor-pointer group overflow-hidden text-gray-50 h-62 w-56  rounded-2xl shadow-xl hover:duration-700 duration-700 border-black mx-auto hover:scale-105'
         }
       >
         <div
@@ -54,7 +54,7 @@ const Card = ({ coin, deleteCoin }) => {
             <img src={coin?.image} className='w-20 mx-auto my-4' alt='/' />
           </Link>
         </div>
-        <div className='absolute bg-gray-50 -bottom-24 w-56 p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500'>
+        <div className='absolute bg-gray-50 border-t-4 border-violet-500 animate-border-color -bottom-24 w-56 p-2 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500'>
           <span className='text-accent font-bold text-xs'>
             <Link to={`/coin/${coin.id}`}>{coin?.symbol.toUpperCase()}</Link>
           </span>
@@ -79,13 +79,28 @@ const Card = ({ coin, deleteCoin }) => {
             </div>
           )}
         </div>
-        <div className='bg-white'>
+        <div
+          className={
+            theme === 'dark'
+              ? 'bg-black border-t-2 border-t-slate-600'
+              : 'bg-white border-t-2 border-t-slate-300'
+          }
+        >
           <Sparklines data={coin.spark}>
             <SparklinesLine
               color={coin?.upordown > 0 ? '#16c784' : '#ea3943'}
               style={{ strokeWidth: '1' }}
             />
           </Sparklines>
+        </div>
+        <div
+          className={
+            theme === 'dark'
+              ? ('border-b-4 border-b-violet-900')
+              : ('border-b-4 border-b-cyan-500')
+          }
+        >
+          <div className='animate-pulse w-full h-4 absolute'></div>
         </div>
       </div>
     </div>
