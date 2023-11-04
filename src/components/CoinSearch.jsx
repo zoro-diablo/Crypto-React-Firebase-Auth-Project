@@ -42,13 +42,13 @@ const CoinSearch = ({ coins }) => {
           {coins
             .filter((value) => {
               if (searchText === '') {
-                return true // Keep all items when searchText is empty
+                return true 
               } else if (
                 value.name.toLowerCase().includes(searchText.toLowerCase())
               ) {
-                return true // Keep items that match the search
+                return true 
               }
-              return false // Filter out items that don't match the search
+              return false 
             })
             .slice((currentPage - 1) * coinsPerPage, currentPage * coinsPerPage)
             .map((coin) => (

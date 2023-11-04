@@ -17,7 +17,7 @@ const handleSubmit = async (e) => {
     await signIn(email, password)
     navigate('/account')
   } catch (e) {
-    const errorCode = e.code.split('/')[1] // Get the error code after "auth/"
+    const errorCode = e.code.split('/')[1] 
     setError(errorCode)
     setError(errorCode.charAt(0).toUpperCase() + errorCode.slice(1))
     setTimeout(() => setError(''), 3000)
@@ -36,6 +36,7 @@ const handleSubmit = async (e) => {
       setEmail={setEmail}
       setPassword={setPassword}
       buttonText='Log In'
+      isSignedIn={true}
     />
   )
 }

@@ -12,18 +12,18 @@ const Signup = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault()
-  setError('') // Clear any previous error
+  setError('') 
 
   if (!email || !password) {
     setError('Please provide both email and password.')
     setTimeout(() => setError(''), 3000)
-    return // Prevent further execution
+    return 
   }
 
   if (password.length < 6) {
     setError('Password must be at least 6 characters.')
     setTimeout(() => setError(''), 3000)
-    return // Prevent further execution
+    return 
   }
 
   try {

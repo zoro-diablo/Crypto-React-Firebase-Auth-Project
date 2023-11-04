@@ -10,6 +10,7 @@ import axios from 'axios';
 import CoinPage from './routes/CoinPage';
 import Footer from './components/Footer';
 import { AuthContextProvider } from './context/AuthContext';
+import PasswordReset from './routes/PasswordReset';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/" element={<Home coins={coins} />}/>
         <Route path="/signin" element={<Signin />}/>
         <Route path="/signup" element={<Signup />}/>
+        <Route path="/passwordreset" element={<PasswordReset />}/>
         <Route path="/account" element={<Account />}/>
         <Route path='/coin/:coinId' element={<CoinPage /> }>
           <Route path=':coinId'/>

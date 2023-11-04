@@ -13,6 +13,7 @@ const AuthForm = ({
   setEmail,
   setPassword,
   buttonText,
+  isSignedIn, 
 }) => {
   const [passwordVisible, setPasswordVisible] = useState(false)
 
@@ -57,7 +58,7 @@ const AuthForm = ({
                 type={passwordVisible ? 'text' : 'password'}
               />
               <button
-                type='button' // Prevent form submission
+                type='button'
                 onClick={togglePasswordVisibility}
                 className='absolute right-4 top-4 text-gray-400'
               >
@@ -69,11 +70,18 @@ const AuthForm = ({
               </button>
             </div>
             {error && (
-              <p className='text-red-600 text-base font-semibold mt-1 ml-3'>{error}</p> // Display error message
+              <p className='text-red-600 text-base font-semibold mt-1 ml-3'>
+                {error}
+              </p>
             )}
           </div>
-          <div className='mt-10'>
-            <Button buttonText={buttonText}/>
+          {isSignedIn && (
+            <Link to='/passwordreset' className='text-accent font-semibold ml-1'>
+              Forgot your password?
+            </Link>
+          )}
+          <div className='mt-5'>
+            <Button buttonText={buttonText} />
           </div>
         </form>
         <p className='my-4'>
